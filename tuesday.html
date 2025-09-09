@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuesday - A Day's Journey</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            animation: dayCycle 20s infinite linear;
+        }
+        @keyframes dayCycle {
+            0% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+            25% { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+            50% { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
+            75% { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); }
+            100% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: containerGlow 20s infinite linear;
+        }
+        @keyframes containerGlow {
+            0% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
+            25% { box-shadow: 0 10px 30px rgba(100, 200, 255, 0.3); }
+            50% { box-shadow: 0 10px 30px rgba(255, 100, 200, 0.3); }
+            75% { box-shadow: 0 10px 30px rgba(100, 255, 200, 0.3); }
+            100% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #9b59b6;
+            padding-bottom: 15px;
+        }
+        .time-indicator {
+            background: #9b59b6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            animation: timePulse 3s infinite;
+        }
+        @keyframes timePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .story-content {
+            font-size: 1.2em;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .time-section {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(155, 89, 182, 0.1);
+            border-left: 4px solid #9b59b6;
+        }
+        .time-label {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .nav-button {
+            background: #9b59b6;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .nav-button:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+        }
+        .page-number {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tuesday</h1>
+        <div class="time-indicator">Morning to Afternoon Journey</div>
+        
+        <div class="story-content">
+            <div class="time-section">
+                <div class="time-label">🌅 Morning - 8:00 AM</div>
+                <p>The day began with the soft glow of morning light filtering through the dormitory window. Alex stepped out into the crisp morning air, the campus still quiet except for the distant sounds of early risers and the gentle chirping of birds. The morning dew glistened on the grass, and the first rays of sunlight painted the buildings in warm, golden hues.</p>
+            </div>
+            
+            <div class="time-section">
+                <div class="time-label">☀️ Mid-Morning - 10:30 AM</div>
+                <p>As the morning progressed, the campus came alive with activity. Students hurried between classes, their footsteps echoing on the pathways. The morning light had grown stronger, casting sharp shadows and illuminating the intricate details of the campus architecture. Alex walked past the library, where the morning sun created beautiful patterns through the stained glass windows.</p>
+            </div>
+            
+            <div class="time-section">
+                <div class="time-label">🌤️ Late Morning - 11:45 AM</div>
+                <p>The late morning brought a different energy to the campus. The sun was higher in the sky, and the morning chill had given way to a comfortable warmth. Students gathered in small groups, some studying under the trees, others simply enjoying the beautiful morning weather. The campus felt alive with possibility and promise.</p>
+            </div>
+            
+            <div class="time-section">
+                <div class="time-label">🌞 Afternoon - 2:15 PM</div>
+                <p>As morning transitioned to afternoon, the light changed subtly, becoming more direct and intense. The afternoon sun cast long shadows across the quadrangle, creating a dramatic contrast between light and shadow. Alex continued their walk, now in the full warmth of the afternoon, appreciating how the campus transformed throughout the day.</p>
+            </div>
+            
+            <div class="time-section">
+                <div class="time-label">🌅 Late Afternoon - 4:30 PM</div>
+                <p>The afternoon was beginning to wane, and the light took on a softer, more golden quality. The walk had been a journey through time as much as space, with each hour bringing its own unique atmosphere to the campus. As the afternoon drew to a close, Alex felt grateful for the opportunity to experience the full cycle of a day in this beautiful place.</p>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="monday.html" class="nav-button">← Previous: Monday</a>
+            <a href="wednesday.html" class="nav-button">Next: Wednesday →</a>
+        </div>
+        
+        <div class="page-number">Page 2 of 5</div>
+    </div>
+</body>
+</html>
