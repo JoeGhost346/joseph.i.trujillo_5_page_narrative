@@ -3,207 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friday - Room with a View</title>
+    <title>Friday - Day to Night</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
-            padding: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #2c3e50 100%);
             min-height: 100vh;
             color: #333;
-            animation: dayNightCycle 30s infinite linear;
+            animation: dayToNight 30s infinite;
         }
-        @keyframes dayNightCycle {
-            0% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
-            10% { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
-            20% { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
-            30% { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); }
-            40% { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
-            50% { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
-            60% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-            70% { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); }
-            80% { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
-            90% { background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%); }
-            100% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        @keyframes dayToNight {
+            0% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%); }
+            50% { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #d299c2 100%); }
+            100% { background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%); }
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: containerGlow 30s infinite linear;
+            animation: containerGlow 30s infinite;
         }
         @keyframes containerGlow {
-            0% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
-            10% { box-shadow: 0 10px 30px rgba(100, 200, 255, 0.3); }
-            20% { box-shadow: 0 10px 30px rgba(255, 100, 200, 0.3); }
-            30% { box-shadow: 0 10px 30px rgba(100, 255, 200, 0.3); }
-            40% { box-shadow: 0 10px 30px rgba(255, 150, 150, 0.3); }
-            50% { box-shadow: 0 10px 30px rgba(200, 100, 255, 0.3); }
-            60% { box-shadow: 0 10px 30px rgba(100, 150, 255, 0.3); }
-            70% { box-shadow: 0 10px 30px rgba(50, 50, 100, 0.5); }
-            80% { box-shadow: 0 10px 30px rgba(30, 30, 80, 0.6); }
-            90% { box-shadow: 0 10px 30px rgba(20, 20, 60, 0.7); }
-            100% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 10px 30px rgba(255,193,7,0.3); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
         }
         h1 {
-            color: #2c3e50;
             text-align: center;
+            color: #8B4513;
             margin-bottom: 30px;
             font-size: 2.5em;
-            border-bottom: 3px solid #f39c12;
-            padding-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: titleGlow 30s infinite;
         }
-        .time-indicator {
-            background: #f39c12;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
-            animation: timePulse 4s infinite;
+        @keyframes titleGlow {
+            0% { color: #8B4513; }
+            50% { color: #ff6b6b; }
+            100% { color: #e8e8e8; }
         }
-        @keyframes timePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .story-content {
+        .story {
             font-size: 1.2em;
             text-align: justify;
             margin-bottom: 30px;
         }
-        .time-section {
-            margin: 30px 0;
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(243, 156, 18, 0.1);
-            border-left: 4px solid #f39c12;
-            animation: sectionGlow 30s infinite linear;
-        }
-        @keyframes sectionGlow {
-            0% { background: rgba(255, 200, 100, 0.1); }
-            25% { background: rgba(100, 200, 255, 0.1); }
-            50% { background: rgba(255, 100, 200, 0.1); }
-            75% { background: rgba(100, 100, 200, 0.2); }
-            100% { background: rgba(255, 200, 100, 0.1); }
-        }
-        .time-label {
+        .time-indicator {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 20px 0;
             font-weight: bold;
-            color: #e67e22;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            animation: timeIndicator 30s infinite;
         }
-        .window-view {
-            background: linear-gradient(45deg, #87CEEB, #98FB98, #F0E68C, #DDA0DD, #2F4F4F, #191970);
-            background-size: 400% 400%;
-            animation: windowGradient 30s infinite linear;
-            height: 200px;
+        @keyframes timeIndicator {
+            0% { background: #ffa726; }
+            25% { background: #ff6b6b; }
+            50% { background: #9c27b0; }
+            75% { background: #673ab7; }
+            100% { background: #2c3e50; }
+        }
+        .room-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
             border-radius: 10px;
             margin: 20px 0;
-            position: relative;
-            overflow: hidden;
+            border-left: 5px solid #6c757d;
         }
-        @keyframes windowGradient {
-            0% { background-position: 0% 50%; }
-            25% { background-position: 100% 50%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-            100% { background-position: 0% 50%; }
+        .window-view {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+            font-style: italic;
         }
-        .window-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-weight: bold;
+        .night-section {
+            background: linear-gradient(135deg, #263238, #37474f);
+            color: #e0e0e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #607d8b;
+        }
+        .reflection-box {
+            background: linear-gradient(135deg, #fff8e1, #f3e5ab);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+            font-style: italic;
         }
         .navigation {
             text-align: center;
             margin-top: 40px;
         }
         .nav-button {
-            background: #f39c12;
+            display: inline-block;
+            background: #4a90e2;
             color: white;
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 25px;
             margin: 0 10px;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: background 0.3s ease;
+            font-weight: bold;
         }
         .nav-button:hover {
-            background: #e67e22;
+            background: #357abd;
             transform: translateY(-2px);
         }
         .page-number {
             text-align: center;
-            color: #7f8c8d;
-            margin-top: 20px;
+            color: #666;
             font-style: italic;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Friday</h1>
-        <div class="time-indicator">Day to Night Cycle - Room View</div>
+        <h1>Friday - Day to Night</h1>
         
-        <div class="story-content">
-            <div class="time-section">
-                <div class="time-label">🌅 Morning - 8:00 AM</div>
-                <p>Alex lay in bed, the morning light streaming through the window, painting the room in warm, golden hues. The morning sun cast long shadows across the floor, and the world outside the window was just beginning to wake up. The morning light was soft and gentle, perfect for a lazy Friday morning.</p>
-                <div class="window-view">
-                    <div class="window-content">Morning Light - Golden and Warm</div>
-                </div>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">☀️ Mid-Morning - 10:30 AM</div>
-                <p>As the morning progressed, the light grew stronger and more direct. Alex could see the campus coming alive through the window, students moving between classes, their figures silhouetted against the bright morning sky. The morning light was at its most brilliant, illuminating everything with clarity and purpose.</p>
-                <div class="window-view">
-                    <div class="window-content">Mid-Morning - Bright and Clear</div>
-                </div>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌞 Afternoon - 2:00 PM</div>
-                <p>The afternoon light was warm and inviting, streaming through the window at a different angle. Alex could see the afternoon shadows lengthening across the campus, and the light had taken on a more golden quality. The afternoon was perfect for reflection and contemplation.</p>
-                <div class="window-view">
-                    <div class="window-content">Afternoon - Golden and Warm</div>
-                </div>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌅 Evening - 6:30 PM</div>
-                <p>As the day began to wane, the light took on a softer, more romantic quality. The evening sun cast everything in a warm, orange glow, and the shadows grew longer and more dramatic. Alex could see the campus bathed in the golden light of evening, a beautiful sight to behold.</p>
-                <div class="window-view">
-                    <div class="window-content">Evening - Orange and Romantic</div>
-                </div>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌙 Night - 9:45 PM</div>
-                <p>The night had fallen, and the window now framed a view of the campus under the stars. The evening lights twinkled in the darkness, and the night sky was filled with stars. Alex lay in bed, watching the night unfold through the window, a perfect end to a week of walks and contemplation.</p>
-                <div class="window-view">
-                    <div class="window-content">Night - Dark and Starry</div>
-                </div>
+        <div class="time-indicator">🌅 3:00 PM - Friday Afternoon</div>
+        
+        <div class="room-section">
+            <h2>Lying Down in the Room</h2>
+            <div class="story">
+                <p>Friday afternoon finds Alex lying comfortably on the bed, the week's weight finally lifted. The room feels like a sanctuary after the busy days of walking across campus, a quiet space where time can slow down and thoughts can wander freely. The afternoon light streams through the window, casting warm patterns across the floor and walls.</p>
+                
+                <p>The bed is soft and welcoming, a perfect place to rest and reflect on the week that has passed. The room is filled with the gentle sounds of the afternoon—distant voices from other students, the soft hum of the building's systems, the occasional sound of footsteps in the hallway. It's a peaceful moment, a chance to breathe and be still.</p>
             </div>
         </div>
+        
+        <div class="window-view">
+            <h3>Through the Window</h3>
+            <p>From this comfortable position, Alex can see the world outside the window—the campus grounds stretching into the distance, the trees swaying gently in the afternoon breeze, the sky painted in warm colors as the day begins its slow transition toward evening. The view is peaceful, contemplative, a perfect backdrop for reflection.</p>
+        </div>
+        
+        <div class="time-indicator">🌆 6:00 PM - Evening Approaches</div>
+        
+        <div class="story">
+            <p>As the afternoon fades into evening, the light in the room begins to change. The warm golden light of day gives way to the softer, more muted tones of twilight. The shadows grow longer, stretching across the room in new patterns. The world outside the window takes on a different character, more mysterious, more inviting.</p>
+            
+            <p>Alex remains comfortably settled on the bed, watching as the day transforms around them. The room feels like a cocoon, a safe space where the week's experiences can be processed and understood. The evening light brings a sense of completion, a feeling that the day has been lived fully and well.</p>
+        </div>
+        
+        <div class="time-indicator">🌙 9:00 PM - Night Falls</div>
+        
+        <div class="night-section">
+            <h2>The Night Arrives</h2>
+            <div class="story">
+                <p>As night falls, the room transforms completely. The warm light of day has been replaced by the cool, silver light of the moon and stars. The window becomes a frame for the night sky, filled with twinkling stars and the soft glow of distant lights. The room feels more intimate now, more private, a perfect place to end the week.</p>
+                
+                <p>Alex lies in the darkness, comfortable and content, watching the night sky through the window. The week's journey—from Monday's afternoon walk to Tuesday's day-long cycle, from Wednesday's midweek reflection to Thursday's anticipation, and finally to this peaceful Friday night—feels complete, a full circle of experiences and emotions.</p>
+                
+                <p>The room is quiet except for the gentle sounds of the night—the distant hum of the building, the soft rustle of leaves outside the window, the occasional sound of a car passing by. It's a perfect ending to a week of walking and wondering, of morning light and afternoon glow, of campus paths and quiet moments.</p>
+            </div>
+        </div>
+        
         
         <div class="navigation">
-            <a href="thursday.html" class="nav-button">← Previous: Thursday</a>
-            <a href="monday.html" class="nav-button">Start Over: Monday →</a>
+            <a href="thursday.html" class="nav-button">← Previous Day</a>
+            <a href="index.html" class="nav-button">Start Over →</a>
         </div>
         
-        <div class="page-number">Page 5 of 5 - The End</div>
+        <div class="page-number">Page 5 of 5</div>
     </div>
 </body>
 </html>

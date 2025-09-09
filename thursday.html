@@ -3,142 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thursday - A Day's Journey</title>
+    <title>Thursday - Morning to Afternoon</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
-            padding: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
             min-height: 100vh;
             color: #333;
-            animation: dayCycle 20s infinite linear;
+            animation: dayCycle 25s infinite;
         }
         @keyframes dayCycle {
-            0% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
-            25% { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
-            50% { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
-            75% { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); }
-            100% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+            0% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%); }
+            50% { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%); }
+            100% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%); }
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: containerGlow 20s infinite linear;
-        }
-        @keyframes containerGlow {
-            0% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
-            25% { box-shadow: 0 10px 30px rgba(100, 200, 255, 0.3); }
-            50% { box-shadow: 0 10px 30px rgba(255, 100, 200, 0.3); }
-            75% { box-shadow: 0 10px 30px rgba(100, 255, 200, 0.3); }
-            100% { box-shadow: 0 10px 30px rgba(255, 200, 100, 0.3); }
         }
         h1 {
-            color: #2c3e50;
             text-align: center;
+            color: #8B4513;
             margin-bottom: 30px;
             font-size: 2.5em;
-            border-bottom: 3px solid #27ae60;
-            padding-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        .time-indicator {
-            background: #27ae60;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
-            animation: timePulse 3s infinite;
-        }
-        @keyframes timePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .story-content {
+        .story {
             font-size: 1.2em;
             text-align: justify;
             margin-bottom: 30px;
         }
-        .time-section {
-            margin: 30px 0;
+        .time-indicator {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            animation: timeChange 25s infinite;
+        }
+        @keyframes timeChange {
+            0% { background: #ffa726; }
+            50% { background: #ff6b6b; }
+            100% { background: #ffa726; }
+        }
+        .morning-section {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
             padding: 20px;
             border-radius: 10px;
-            background: rgba(39, 174, 96, 0.1);
-            border-left: 4px solid #27ae60;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
         }
-        .time-label {
-            font-weight: bold;
-            color: #229954;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+        .noon-section {
+            background: linear-gradient(135deg, #fff9c4, #ffeb3b);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        .afternoon-section {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e91e63;
+        }
+        .thursday-feeling {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #03a9f4;
+            font-style: italic;
         }
         .navigation {
             text-align: center;
             margin-top: 40px;
         }
         .nav-button {
-            background: #27ae60;
+            display: inline-block;
+            background: #4a90e2;
             color: white;
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 25px;
             margin: 0 10px;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: background 0.3s ease;
+            font-weight: bold;
         }
         .nav-button:hover {
-            background: #229954;
+            background: #357abd;
             transform: translateY(-2px);
         }
         .page-number {
             text-align: center;
-            color: #7f8c8d;
-            margin-top: 20px;
+            color: #666;
             font-style: italic;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Thursday</h1>
-        <div class="time-indicator">Morning to Afternoon Journey</div>
+        <h1>Thursday - The Day's Journey</h1>
         
-        <div class="story-content">
-            <div class="time-section">
-                <div class="time-label">🌅 Morning - 7:30 AM</div>
-                <p>Thursday morning dawned with a different energy, as if the campus was preparing for the week's crescendo. Alex stepped out into the cool morning air, the campus bathed in the soft, golden light of early morning. The morning mist was just beginning to lift, revealing the familiar buildings in a new light.</p>
+        <div class="time-indicator">🌅 8:00 AM - Thursday Morning</div>
+        
+        <div class="morning-section">
+            <h2>Morning Walk</h2>
+            <div class="story">
+                <p>The morning air is crisp and invigorating as Alex steps onto the campus grounds. Dew glistens on the grass like scattered diamonds, and the early sun casts everything in a soft, golden light. The campus feels fresh and new, as if it's been reborn overnight. Students move with purpose, their breath visible in the cool morning air, their footsteps creating a gentle rhythm against the pavement.</p>
+                
+                <p>The old clock tower chimes eight times, its deep, resonant sound echoing across the quad. Alex walks past the coffee cart where steam rises in delicate spirals, carrying the rich aroma of freshly brewed coffee. The morning light filters through the leaves of the ancient trees, creating patterns of light and shadow that dance across the pathway.</p>
             </div>
-            
-            <div class="time-section">
-                <div class="time-label">☀️ Mid-Morning - 9:45 AM</div>
-                <p>The morning progressed with a steady rhythm, students moving with purpose between classes. The morning light had grown stronger, illuminating the campus in a way that made everything feel fresh and new. Alex walked past the science building, where the morning sun created interesting reflections on the glass façade.</p>
+        </div>
+        
+        <div class="time-indicator">☀️ 12:00 PM - Noon Sun</div>
+        
+        <div class="noon-section">
+            <h2>Midday Walk</h2>
+            <div class="story">
+                <p>At noon, the campus is alive with activity. The sun is directly overhead, casting sharp shadows and bright light across the quad. Students gather in groups, some heading to lunch, others finding spots in the shade to study or relax. The energy is different now—more social, more communal, as if the campus has become a meeting place for the entire student body.</p>
+                
+                <p>Alex walks through the bustling center of campus, past the student union where the lunch crowd has gathered. The noon light is intense and clear, revealing every detail of the campus architecture. The old buildings look stately and solid in the bright midday sun, their shadows creating geometric patterns on the ground.</p>
+                
+                <p>The campus feels like the heart of the day, pulsing with life and activity. Students move in all directions, their conversations creating a constant hum of voices. The noon sun illuminates everything with equal intensity, making the campus feel both grand and intimate at the same time.</p>
             </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌤️ Late Morning - 11:20 AM</div>
-                <p>As the morning reached its peak, the campus was alive with activity. The morning light was at its most brilliant, casting everything in sharp relief. Students gathered in the quadrangle, some studying, others simply enjoying the beautiful morning weather. The campus felt like a place of endless possibility.</p>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌞 Afternoon - 1:50 PM</div>
-                <p>The transition from morning to afternoon brought subtle changes in the light and atmosphere. The afternoon sun was warmer, more direct, and the campus took on a different character. Alex continued their walk, now in the full embrace of the afternoon, appreciating how the changing light affected the mood and feel of each space.</p>
-            </div>
-            
-            <div class="time-section">
-                <div class="time-label">🌅 Late Afternoon - 3:45 PM</div>
-                <p>The afternoon was beginning to mellow, the light taking on a softer, more golden quality. The walk had been a journey through time, with each hour bringing its own unique atmosphere to the campus. As the afternoon drew to a close, Alex felt a deep appreciation for the beauty of this place and the way it transformed throughout the day.</p>
+        </div>
+        
+        <div class="time-indicator">🕐 2:30 PM - Thursday Afternoon</div>
+        
+        <div class="afternoon-section">
+            <h2>Afternoon Return</h2>
+            <div class="story">
+                <p>As the day progresses, Alex returns to the same pathways, but now the campus has transformed. The morning's crispness has given way to the warm embrace of afternoon sun. The shadows have shifted, creating new patterns and perspectives. The same trees that provided morning shade now cast different shadows, and the light has taken on a richer, more golden quality.</p>
+                
+                <p>The afternoon walk feels different—more contemplative, more settled. The morning's energy has been replaced by a sense of accomplishment and the gentle fatigue that comes from a day well-spent. Students still move about, but their pace has changed, their expressions more relaxed, their conversations more animated.</p>
+                
+                <p>Alex notices how the same places look different in the afternoon light, how the campus reveals new secrets as the day unfolds. The morning's promise has been fulfilled in the afternoon's reality, and there's a sense of completion in the air, a feeling that the day has been lived fully and well.</p>
             </div>
         </div>
         
         <div class="navigation">
-            <a href="wednesday.html" class="nav-button">← Previous: Wednesday</a>
-            <a href="friday.html" class="nav-button">Next: Friday →</a>
+            <a href="wednesday.html" class="nav-button">← Previous Day</a>
+            <a href="friday.html" class="nav-button">Next Day →</a>
         </div>
         
         <div class="page-number">Page 4 of 5</div>
